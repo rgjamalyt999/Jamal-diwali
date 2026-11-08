@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>⚡ DIWALI CYBER PROTOCOL // HACKER JAMAL ⚡</title>
+    <title>🪔 DIWALI SPECIAL // CYBER WARRIOR JAMAL 🪔</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;900&family=Share+Tech+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Poppins:wght@400;600;700&family=Share+Tech+Mono&display=swap');
 
         * {
             margin: 0;
@@ -15,9 +15,9 @@
         }
 
         body {
-            background-color: #000000;
-            color: #00ffcc;
-            font-family: 'Share Tech Mono', monospace;
+            background-color: #05020a;
+            color: #ffffff;
+            font-family: 'Poppins', sans-serif;
             overflow: hidden;
             height: 100vh;
             width: 100vw;
@@ -27,6 +27,7 @@
             position: relative;
         }
 
+        /* Background Diwali Matrix + Fireworks Canvas */
         canvas {
             position: absolute;
             top: 0;
@@ -36,352 +37,523 @@
             z-index: 1;
         }
 
-        /* Lock Screen Terminal */
+        /* Top Hanging Fairy Lights (Toran) */
+        .light-rope {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            z-index: 15;
+            padding: 0 5px;
+            pointer-events: none;
+        }
+
+        .bulb {
+            width: 12px;
+            height: 18px;
+            border-radius: 50%;
+            background: #ffcc00;
+            animation: glowBulb 1s infinite alternate;
+        }
+
+        .bulb:nth-child(odd) {
+            background: #00ffcc;
+            animation-duration: 0.7s;
+        }
+
+        .bulb:nth-child(3n) {
+            background: #ff0055;
+            animation-duration: 1.2s;
+        }
+
+        @keyframes glowBulb {
+            0% { transform: translateY(0) scale(0.9); box-shadow: 0 0 8px currentColor; opacity: 0.7; }
+            100% { transform: translateY(3px) scale(1.1); box-shadow: 0 0 22px currentColor, 0 0 35px #ffcc00; opacity: 1; }
+        }
+
+        /* ================= LOCK SCREEN ================= */
         #lock-screen {
             position: relative;
             z-index: 10;
-            background: rgba(0, 15, 10, 0.85);
-            border: 2px solid #00ffcc;
-            box-shadow: 0 0 25px #00ffcc, inset 0 0 15px rgba(0, 255, 204, 0.3);
-            border-radius: 12px;
-            padding: 30px 20px;
+            background: rgba(15, 5, 25, 0.88);
+            border: 2px solid #ffcc00;
+            box-shadow: 0 0 30px rgba(255, 204, 0, 0.4), inset 0 0 20px rgba(0, 255, 204, 0.2);
+            border-radius: 18px;
+            padding: 28px 20px;
             width: 90%;
             max-width: 380px;
             text-align: center;
-            backdrop-filter: blur(8px);
+            backdrop-filter: blur(10px);
         }
 
-        .sys-title {
-            font-size: 1.1rem;
-            color: #ff0055;
-            margin-bottom: 15px;
-            text-shadow: 0 0 8px #ff0055;
-            letter-spacing: 1px;
+        .warrior-tag {
+            display: inline-block;
+            background: linear-gradient(90deg, #ff0055, #ff6600);
+            color: #fff;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 800;
+            padding: 5px 14px;
+            border-radius: 20px;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
+            box-shadow: 0 0 15px #ff0055;
+        }
+
+        .lock-diya {
+            font-size: 3.2rem;
+            margin: 5px 0;
+            filter: drop-shadow(0 0 15px #ff9900);
+            animation: floatDiya 2s infinite ease-in-out;
+        }
+
+        @keyframes floatDiya {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
         }
 
         .typewriter {
-            font-size: 0.95rem;
-            color: #00ff66;
-            margin-bottom: 25px;
-            min-height: 60px;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.9rem;
+            color: #00ffcc;
+            margin: 15px 0 22px;
+            min-height: 75px;
             line-height: 1.5;
             text-align: left;
-            background: rgba(0, 0, 0, 0.6);
-            padding: 10px;
-            border-left: 3px solid #00ffcc;
+            background: rgba(0, 0, 0, 0.65);
+            padding: 12px;
+            border-radius: 8px;
+            border-left: 3px solid #ffcc00;
         }
 
-        .cyber-btn {
-            background: transparent;
-            color: #00ffcc;
+        .unlock-btn {
+            background: linear-gradient(45deg, #ff6600, #ffcc00);
+            color: #000;
             font-family: 'Orbitron', sans-serif;
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 900;
             padding: 14px 24px;
-            border: 2px solid #00ffcc;
-            border-radius: 6px;
+            border: none;
+            border-radius: 30px;
             cursor: pointer;
-            box-shadow: 0 0 15px rgba(0, 255, 204, 0.5);
+            box-shadow: 0 0 20px #ff9900;
             transition: 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            animation: pulse 1.5s infinite;
+            letter-spacing: 1px;
+            animation: pulseBtn 1.5s infinite;
+            width: 100%;
         }
 
-        .cyber-btn:hover, .cyber-btn:active {
-            background: #00ffcc;
-            color: #000;
-            box-shadow: 0 0 30px #00ffcc, 0 0 60px #00ffcc;
+        @keyframes pulseBtn {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 20px #ff9900; }
+            50% { transform: scale(1.04); box-shadow: 0 0 35px #ffcc00, 0 0 15px #00ffcc; }
         }
 
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
-        /* Main Wish Container */
+        /* ================= MAIN VIP WISH SCREEN ================= */
         #wish-screen {
             display: none;
             position: relative;
             z-index: 10;
-            background: rgba(5, 5, 15, 0.75);
-            border: 1.5px solid rgba(255, 170, 0, 0.8);
-            box-shadow: 0 0 35px rgba(255, 136, 0, 0.5), inset 0 0 20px rgba(0, 255, 204, 0.2);
-            border-radius: 16px;
-            padding: 22px 18px;
+            background: linear-gradient(145deg, rgba(20, 8, 35, 0.85), rgba(5, 15, 25, 0.9));
+            border: 2px solid #ffcc00;
+            box-shadow: 0 0 40px rgba(255, 153, 0, 0.5), inset 0 0 25px rgba(0, 255, 204, 0.25);
+            border-radius: 20px;
+            padding: 18px 16px;
             width: 92%;
             max-width: 400px;
             text-align: center;
-            backdrop-filter: blur(10px);
-            animation: zoomIn 0.6s ease-out;
+            backdrop-filter: blur(12px);
+            animation: royalReveal 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        @keyframes zoomIn {
-            from { opacity: 0; transform: scale(0.7); }
-            to { opacity: 1; transform: scale(1); }
+        @keyframes royalReveal {
+            from { opacity: 0; transform: scale(0.6) translateY(30px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
         }
 
-        .badge {
+        .top-mantra {
+            font-size: 0.8rem;
+            color: #ffcc00;
+            letter-spacing: 2px;
+            font-weight: 700;
+            text-shadow: 0 0 8px #ff9900;
+            margin-bottom: 4px;
+        }
+
+        .main-heading {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.7rem;
+            font-weight: 900;
+            background: linear-gradient(90deg, #ffcc00, #ffffff, #00ffcc, #ffcc00);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shineText 3s linear infinite;
+            filter: drop-shadow(0 0 10px rgba(255, 153, 0, 0.6));
+            margin-bottom: 4px;
+        }
+
+        @keyframes shineText {
+            to { background-position: 200% center; }
+        }
+
+        .guest-banner {
             display: inline-block;
+            background: rgba(0, 255, 204, 0.12);
+            border: 1px solid #00ffcc;
+            color: #00ffcc;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.9rem;
+            padding: 3px 14px;
+            border-radius: 15px;
+            margin-bottom: 12px;
+            text-shadow: 0 0 8px #00ffcc;
+        }
+
+        /* 3 Glowing Royal Diyas Row */
+        .diya-row {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            gap: 22px;
+            margin: 8px auto 12px;
+            height: 65px;
+        }
+
+        .diya-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .diya-item.center-diya {
+            transform: scale(1.25);
+        }
+
+        .flame {
+            width: 16px;
+            height: 30px;
+            background: radial-gradient(circle at 50% 80%, #ffffff, #ffcc00 45%, #ff5500 85%, transparent);
+            border-radius: 50% 50% 35% 35%;
+            box-shadow: 0 0 18px #ff9900, 0 0 35px #ff3300;
+            animation: flicker 0.14s infinite alternate;
+        }
+
+        @keyframes flicker {
+            0% { transform: scale(1) rotate(-3deg); }
+            100% { transform: scale(1.08) rotate(3deg); }
+        }
+
+        .diya-bowl {
+            width: 56px;
+            height: 24px;
+            background: linear-gradient(90deg, #b33c00, #ffaa00, #b33c00);
+            border-radius: 0 0 40px 40px;
+            border-top: 2px solid #00ffcc;
+            box-shadow: 0 4px 15px rgba(255, 153, 0, 0.7);
+            margin-top: -3px;
+        }
+
+        /* Special Shayari Card */
+        .shayari-card {
+            background: rgba(0, 0, 0, 0.65);
+            border: 1.5px solid rgba(255, 204, 0, 0.6);
+            border-radius: 14px;
+            padding: 14px 12px;
+            margin-bottom: 10px;
+            position: relative;
+            box-shadow: inset 0 0 15px rgba(255, 153, 0, 0.2);
+        }
+
+        .shayari-text {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #fff8e7;
+            font-weight: 600;
+            text-shadow: 0 1px 4px #000;
+        }
+
+        .shayari-text span.highlight {
+            color: #ffcc00;
+            font-weight: 700;
+        }
+
+        .shayari-text span.cyber {
+            color: #00ffcc;
+            font-family: 'Share Tech Mono', monospace;
+        }
+
+        .next-shayari-btn {
+            margin-top: 8px;
             background: rgba(0, 255, 204, 0.15);
             border: 1px solid #00ffcc;
             color: #00ffcc;
             font-size: 0.75rem;
-            padding: 4px 10px;
-            border-radius: 20px;
-            margin-bottom: 10px;
+            padding: 4px 12px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-family: 'Share Tech Mono', monospace;
+        }
+
+        .next-shayari-btn:active {
+            background: #00ffcc;
+            color: #000;
+        }
+
+        /* Sender Royal Badge */
+        .warrior-credit-box {
+            background: linear-gradient(90deg, rgba(255,0,85,0.15), rgba(255,153,0,0.2), rgba(0,255,204,0.15));
+            border: 1px solid #ff9900;
+            border-radius: 10px;
+            padding: 8px;
+            margin-bottom: 12px;
+        }
+
+        .credit-label {
+            font-size: 0.7rem;
+            color: #cccccc;
             letter-spacing: 1px;
         }
 
-        .glitch-title {
+        .warrior-name {
             font-family: 'Orbitron', sans-serif;
-            font-size: 1.8rem;
+            font-size: 1.05rem;
             font-weight: 900;
             color: #ffcc00;
-            text-shadow: 0 0 10px #ff6600, 0 0 25px #ff3300;
-            margin-bottom: 5px;
-            letter-spacing: 2px;
-        }
-
-        .target-user {
-            font-size: 1.2rem;
-            color: #00ffcc;
-            text-shadow: 0 0 10px #00ffcc;
-            margin-bottom: 15px;
-            font-weight: bold;
-        }
-
-        /* Animated Cyber Diya */
-        .diya-wrapper {
-            position: relative;
-            width: 100px;
-            height: 90px;
-            margin: 10px auto 15px;
-        }
-
-        .flame {
-            width: 24px;
-            height: 45px;
-            background: radial-gradient(circle at 50% 80%, #ffffff, #ffcc00 40%, #ff5500 80%, transparent);
-            border-radius: 50% 50% 35% 35%;
-            margin: 0 auto;
-            box-shadow: 0 0 25px #ff9900, 0 0 50px #ff5500;
-            animation: flicker 0.15s infinite alternate;
-        }
-
-        @keyframes flicker {
-            0% { transform: scale(1) rotate(-2deg); opacity: 0.95; }
-            100% { transform: scale(1.06) rotate(2deg); opacity: 1; }
-        }
-
-        .diya-base {
-            width: 90px;
-            height: 38px;
-            background: linear-gradient(45deg, #cc4400, #ff9900, #cc4400);
-            border-radius: 0 0 50px 50px;
-            margin: -5px auto 0;
-            border-top: 3px solid #00ffcc;
-            box-shadow: 0 5px 20px rgba(255, 136, 0, 0.8), 0 0 10px #00ffcc;
-        }
-
-        /* Shayari / Terminal Log Box */
-        .msg-box {
-            background: rgba(0, 0, 0, 0.65);
-            border: 1px solid #00ff66;
-            border-radius: 8px;
-            padding: 12px;
-            font-size: 0.92rem;
-            color: #e0ffe0;
-            line-height: 1.5;
-            margin-bottom: 15px;
-            text-align: left;
-            box-shadow: inset 0 0 10px rgba(0, 255, 102, 0.2);
-        }
-
-        .msg-box span.code {
-            color: #ffcc00;
-            font-weight: bold;
-        }
-
-        .sender-credit {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 0.95rem;
-            color: #ff0055;
-            text-shadow: 0 0 10px #ff0055;
-            margin-bottom: 18px;
+            text-shadow: 0 0 10px #ff6600;
             letter-spacing: 1px;
         }
 
-        .sender-credit span {
-            color: #00ffcc;
-            text-shadow: 0 0 10px #00ffcc;
-        }
-
-        /* Share Generator */
-        .share-box {
+        /* WhatsApp Share Bar */
+        .share-container {
             display: flex;
-            gap: 8px;
-            margin-top: 10px;
+            gap: 6px;
         }
 
-        .share-input {
+        .name-input {
             flex: 1;
             background: rgba(0, 0, 0, 0.8);
-            border: 1px solid #00ffcc;
-            color: #00ffcc;
-            padding: 10px;
-            border-radius: 6px;
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 0.9rem;
+            border: 1.5px solid #00ffcc;
+            color: #ffffff;
+            padding: 10px 12px;
+            border-radius: 10px;
+            font-size: 0.85rem;
             outline: none;
         }
 
-        .share-btn {
-            background: #00cc66;
+        .name-input::placeholder {
+            color: #88aaaa;
+        }
+
+        .whatsapp-btn {
+            background: linear-gradient(45deg, #00b359, #00ff80);
             color: #000;
             border: none;
             padding: 10px 14px;
-            border-radius: 6px;
+            border-radius: 10px;
             font-family: 'Orbitron', sans-serif;
             font-weight: 900;
             font-size: 0.8rem;
             cursor: pointer;
-            box-shadow: 0 0 12px #00cc66;
+            box-shadow: 0 0 15px rgba(0, 255, 128, 0.6);
+            white-space: nowrap;
         }
     </style>
 </head>
 <body>
 
-    <canvas id="cyberCanvas"></canvas>
-
-    <!-- LOCK SCREEN -->
-    <div id="lock-screen">
-        <div class="sys-title">⚠️ ENCRYPTED FESTIVAL PAYLOAD ⚠️</div>
-        <div class="typewriter" id="terminal-text"></div>
-        <button class="cyber-btn" onclick="unlockProtocol()">[ DECRYPT WISH ]</button>
+    <!-- Top Glowing Fairy Lights -->
+    <div class="light-rope">
+        <div class="bulb"></div><div class="bulb"></div><div class="bulb"></div><div class="bulb"></div>
+        <div class="bulb"></div><div class="bulb"></div><div class="bulb"></div><div class="bulb"></div>
+        <div class="bulb"></div><div class="bulb"></div><div class="bulb"></div><div class="bulb"></div>
+        <div class="bulb"></div><div class="bulb"></div><div class="bulb"></div><div class="bulb"></div>
     </div>
 
-    <!-- MAIN WISH SCREEN -->
+    <!-- Background Diwali Matrix & Fireworks Canvas -->
+    <canvas id="diwaliCanvas"></canvas>
+
+    <!-- STEP 1: CYBER WARRIOR LOCK SCREEN -->
+    <div id="lock-screen">
+        <div class="warrior-tag">🛡️ CYBER WARRIOR EDITION 🛡️</div>
+        <div class="lock-diya">🪔</div>
+        <div class="typewriter" id="terminal-text"></div>
+        <button class="unlock-btn" onclick="openRoyalWish()">✨ रोशनी का द्वार खोलें ✨</button>
+    </div>
+
+    <!-- STEP 2: MAIN ROYAL WISH SCREEN -->
     <div id="wish-screen">
-        <div class="badge">STATUS: SYSTEM ILLUMINATED ⚡</div>
-        <div class="glitch-title">HAPPY DIWALI</div>
-        <div class="target-user" id="guest-name">TARGET: VIP DOST</div>
+        <div class="top-mantra">॥ शुभ दीपावली • शुभ लाभ ॥</div>
+        <div class="main-heading">HAPPY DIWALI</div>
+        <div class="guest-banner" id="guest-display">🌟 VIP SPECIAL WISH 🌟</div>
 
-        <div class="diya-wrapper">
-            <div class="flame"></div>
-            <div class="diya-base"></div>
+        <!-- 3 Animated Glowing Diyas -->
+        <div class="diya-row">
+            <div class="diya-item">
+                <div class="flame"></div>
+                <div class="diya-bowl"></div>
+            </div>
+            <div class="diya-item center-diya">
+                <div class="flame"></div>
+                <div class="diya-bowl"></div>
+            </div>
+            <div class="diya-item">
+                <div class="flame"></div>
+                <div class="diya-bowl"></div>
+            </div>
         </div>
 
-        <div class="msg-box">
-            > <span class="code">Executing:</span> Happiness_Boost.exe<br>
-            > <span class="code">Deleting:</span> All_Sorrows & Bugs... [100%]<br><br>
-            दीपों का ये पावन त्योहार,<br>
-            आपके जीवन में लाए खुशियां हजार।<br>
-            आपका हर सपना हो <span class="code">Successfully Compiled</span>,<br>
-            और तरक्की का सर्वर कभी न हो <span class="code">Down!</span> 🪔✨
+        <!-- Special Shayari Section -->
+        <div class="shayari-card">
+            <div class="shayari-text" id="shayari-box">
+                दीपों की रोशनी से जगमगाए आपका संसार,<br>
+                खुशियों की बौछार लेकर आए ये त्योहार।<br>
+                जिंदगी से <span class="cyber">Delete</span> हो जाएं सारे ग़म के अंधेरे,<br>
+                और कामयाबी का <span class="highlight">Server</span> रहे हमेशा अपार! 🪔✨
+            </div>
+            <button class="next-shayari-btn" onclick="changeShayari()">🔄 अगली शायरी पढ़ें</button>
         </div>
 
-        <div class="sender-credit">
-            BY TERMINAL ADMIN: <span id="sender-display">HACKER JAMAL</span>
+        <!-- Sender Branding -->
+        <div class="warrior-credit-box">
+            <div class="credit-label">✨ हार्दिक शुभकामनाएं प्रेषक ✨</div>
+            <div class="warrior-name" id="sender-display">⚡ CYBER WARRIOR JAMAL ⚡</div>
         </div>
 
-        <!-- WhatsApp Share Box -->
-        <div class="share-box">
-            <input type="text" id="customName" class="share-input" placeholder="अपना नाम लिखें...">
-            <button class="share-btn" onclick="shareOnWhatsApp()">SHARE 🚀</button>
+        <!-- Viral WhatsApp Share Generator -->
+        <div class="share-container">
+            <input type="text" id="userNameInput" class="name-input" placeholder="यहाँ अपना नाम लिखें...">
+            <button class="whatsapp-btn" onclick="shareWish()">WhatsApp 🚀</button>
         </div>
     </div>
 
     <script>
-        // URL Parameter Reader (?name=Name)
-        const urlParams = new URLSearchParams(window.location.search);
-        const senderParam = urlParams.get('by') || "HACKER JAMAL";
-        const guestParam = urlParams.get('to');
+        // 1. Read Custom Names from Link (?by=Name&to=Friend)
+        const params = new URLSearchParams(window.location.search);
+        const senderName = params.get('by') || "CYBER WARRIOR JAMAL";
+        const receiverName = params.get('to');
 
-        document.getElementById('sender-display').innerText = senderParam.toUpperCase();
-        if (guestParam) {
-            document.getElementById('guest-name').innerText = "WELCOME: " + guestParam.toUpperCase();
-        } else {
-            document.getElementById('guest-name').innerText = "FROM: " + senderParam.toUpperCase();
+        document.getElementById('sender-display').innerText = "⚡ " + senderName.toUpperCase() + " ⚡";
+        if (receiverName) {
+            document.getElementById('guest-display').innerText = "👑 खास आपके लिए: " + receiverName.toUpperCase();
         }
 
-        // Terminal Typewriter Effect on Load
-        const bootLines = [
-            "> Establishing secure connection...",
-            "> Bypassing darkness firewall...",
-            "> Payload received from: " + senderParam,
-            "> Click below to execute Diwali Protocol."
-        ];
-        let lineIdx = 0, charIdx = 0;
-        const termEl = document.getElementById('terminal-text');
+        // 2. Special Diwali Shayari Collection
+        const shayaris = [
+            `दीपों की रोशनी से जगमगाए आपका संसार,<br>खुशियों की बौछार लेकर आए ये त्योहार।<br>जिंदगी से <span class="cyber">Delete</span> हो जाएं सारे ग़म के अंधेरे,<br>और कामयाबी का <span class="highlight">Server</span> रहे हमेशा अपार! 🪔✨`,
+            
+            `हर दीये की लौ में एक नई उम्मीद जले,<br>आपकी मेहनत का हर <span class="cyber">Code</span> कामयाबी में बदले।<br>माँ लक्ष्मी और गणेश जी की कृपा रहे ऐसी,<br>कि आपके घर में खुशियों का <span class="highlight">Network</span> हमेशा चले! 🎇🙏`,
+            
+            `सोने-चांदी सी चमक हो आपके हर एक पल में,<br>कोई <span class="cyber">Error</span> न आए आपकी खुशियों के महल में।<br><span class="highlight">${senderName}</span> की तरफ से दिल से दुआ है,<br>सबसे खास हो यह दिवाली आपके जीवन में! 🌟🪔`,
 
-        function typeBootText() {
-            if (lineIdx < bootLines.length) {
-                if (charIdx < bootLines[lineIdx].length) {
-                    termEl.innerHTML += bootLines[lineIdx].charAt(charIdx);
-                    charIdx++;
-                    setTimeout(typeBootText, 25);
+            `अंधेरों के <span class="cyber">Firewall</span> को चीर कर उजाला आया है,<br>दीपों की जगमगाहट ने हर कोना सजाया है।<br>मुबारक हो आपको और आपके पूरे परिवार को,<br>खुशियों का ये सबसे खूबसूरत त्योहार आया है! 🎆💛`
+        ];
+        let currentShayari = 0;
+
+        function changeShayari() {
+            playClickBeep();
+            currentShayari = (currentShayari + 1) % shayaris.length;
+            document.getElementById('shayari-box').innerHTML = shayaris[currentShayari];
+        }
+
+        // 3. Boot Screen Typewriter
+        const bootMessages = [
+            "> Initializing Festival Protocol...",
+            "> Loading Golden Diyas & Fireworks...",
+            "> Special Message By: " + senderName,
+            "> Status: Ready to Illuminate! 🪔"
+        ];
+        let mIdx = 0, cIdx = 0;
+        const termBox = document.getElementById('terminal-text');
+
+        function typeWriterEffect() {
+            if (mIdx < bootMessages.length) {
+                if (cIdx < bootMessages[mIdx].length) {
+                    termBox.innerHTML += bootMessages[mIdx].charAt(cIdx);
+                    cIdx++;
+                    setTimeout(typeWriterEffect, 25);
                 } else {
-                    termEl.innerHTML += "<br>";
-                    lineIdx++;
-                    charIdx = 0;
-                    setTimeout(typeBootText, 200);
+                    termBox.innerHTML += "<br>";
+                    mIdx++;
+                    cIdx = 0;
+                    setTimeout(typeWriterEffect, 180);
                 }
             }
         }
-        typeBootText();
+        typeWriterEffect();
 
-        // Web Audio API - Cyber Sound & Firework Crackle
+        // 4. Web Audio API Sounds (Royal Chime + Firework Boom)
         const AudioCtx = window.AudioContext || window.webkitAudioContext;
         let audioCtx;
 
-        function playHackerSound() {
+        function initAudio() {
             if (!audioCtx) audioCtx = new AudioCtx();
+        }
+
+        function playRoyalUnlockSound() {
+            initAudio();
             const now = audioCtx.currentTime;
-            
-            // Power-up cyber arpeggio
-            const notes = [330, 440, 554, 659, 880, 1108];
-            notes.forEach((freq, idx) => {
+            const melody = [523.25, 659.25, 783.99, 1046.50, 1318.51]; // Auspicious celebratory chime
+            melody.forEach((freq, i) => {
                 const osc = audioCtx.createOscillator();
                 const gain = audioCtx.createGain();
-                osc.type = 'sawtooth';
-                osc.frequency.setValueAtTime(freq, now + idx * 0.07);
-                gain.gain.setValueAtTime(0.12, now + idx * 0.07);
-                gain.gain.exponentialRampToValueAtTime(0.001, now + idx * 0.07 + 0.15);
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(freq, now + i * 0.09);
+                gain.gain.setValueAtTime(0.18, now + i * 0.09);
+                gain.gain.exponentialRampToValueAtTime(0.001, now + i * 0.09 + 0.35);
                 osc.connect(gain);
                 gain.connect(audioCtx.destination);
-                osc.start(now + idx * 0.07);
-                osc.stop(now + idx * 0.07 + 0.15);
+                osc.start(now + i * 0.09);
+                osc.stop(now + i * 0.09 + 0.35);
             });
         }
 
-        function playBoomSound() {
+        function playClickBeep() {
+            initAudio();
+            const now = audioCtx.currentTime;
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.type = 'triangle';
+            osc.frequency.setValueAtTime(800, now);
+            gain.gain.setValueAtTime(0.1, now);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + 0.1);
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            osc.start(now);
+            osc.stop(now + 0.1);
+        }
+
+        function playFireworkPop() {
             if (!audioCtx) return;
             const now = audioCtx.currentTime;
             const osc = audioCtx.createOscillator();
             const gain = audioCtx.createGain();
             osc.type = 'triangle';
-            osc.frequency.setValueAtTime(140, now);
-            osc.frequency.exponentialRampToValueAtTime(30, now + 0.25);
-            gain.gain.setValueAtTime(0.15, now);
-            gain.gain.exponentialRampToValueAtTime(0.001, now + 0.25);
+            osc.frequency.setValueAtTime(160, now);
+            osc.frequency.exponentialRampToValueAtTime(35, now + 0.22);
+            gain.gain.setValueAtTime(0.12, now);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + 0.22);
             osc.connect(gain);
             gain.connect(audioCtx.destination);
             osc.start(now);
-            osc.stop(now + 0.25);
+            osc.stop(now + 0.22);
         }
 
-        // Unlock Button Action
-        let fireworksActive = false;
-        function unlockProtocol() {
-            playHackerSound();
+        // 5. Open Wish Screen
+        let celebrationActive = false;
+        function openRoyalWish() {
+            playRoyalUnlockSound();
             document.getElementById('lock-screen').style.display = 'none';
             document.getElementById('wish-screen').style.display = 'block';
-            fireworksActive = true;
+            celebrationActive = true;
+            // Launch immediate welcome fireworks
+            createFirework(window.innerWidth * 0.2, window.innerHeight * 0.25);
+            createFirework(window.innerWidth * 0.8, window.innerHeight * 0.25);
         }
 
-        // Canvas Matrix Rain + Fireworks Engine
-        const canvas = document.getElementById('cyberCanvas');
+        // 6. DIWALI DIYA MATRIX + FIREWORKS CANVAS ENGINE
+        const canvas = document.getElementById('diwaliCanvas');
         const ctx = canvas.getContext('2d');
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
@@ -391,23 +563,23 @@
             canvas.height = window.innerHeight;
         });
 
-        // Matrix Rain Setup
-        const chars = "01अआइईउऊएऐओऔकखगघचछजझटठडढणतथदधनपफबभमयरलवशषसह🪔✨⚡";
-        const fontSize = 14;
-        const columns = Math.floor(canvas.width / fontSize);
-        const drops = Array(columns).fill(1);
+        // Diwali Matrix Symbols (Diyas, Sparkles, Swastik, Om, Kalash, Crackers)
+        const diwaliSymbols = ["🪔", "✨", "卐", "ॐ", "🎇", "🏺", "🌟", "शुभ", "लाभ", "🪔", "✨"];
+        const colWidth = 28;
+        const columns = Math.floor(canvas.width / colWidth);
+        const drops = Array(columns).fill(0).map(() => Math.random() * -30);
 
-        // Fireworks Setup
-        let particles = [];
-        const colors = ['#00ffcc', '#ffcc00', '#ff0055', '#00ff66', '#ff6600', '#aa00ff'];
+        // Fireworks Particles
+        let sparks = [];
+        const fireworkColors = ['#ffcc00', '#00ffcc', '#ff0055', '#ff6600', '#00ff66', '#ffff00'];
 
         function createFirework(x, y) {
-            playBoomSound();
-            const color = colors[Math.floor(Math.random() * colors.length)];
-            for (let i = 0; i < 40; i++) {
-                const angle = (Math.PI * 2 * i) / 40;
+            playFireworkPop();
+            const color = fireworkColors[Math.floor(Math.random() * fireworkColors.length)];
+            for (let i = 0; i < 36; i++) {
+                const angle = (Math.PI * 2 * i) / 36;
                 const speed = Math.random() * 4 + 1.5;
-                particles.push({
+                sparks.push({
                     x: x,
                     y: y,
                     vx: Math.cos(angle) * speed,
@@ -418,75 +590,77 @@
             }
         }
 
-        // Tap anywhere to launch extra fireworks
+        // Tap anywhere on screen for extra fireworks
         window.addEventListener('click', (e) => {
-            if (fireworksActive && e.target.tagName !== 'BUTTON' && e.target.tagName !== 'INPUT') {
+            if (celebrationActive && e.target.tagName !== 'BUTTON' && e.target.tagName !== 'INPUT') {
                 createFirework(e.clientX, e.clientY);
             }
         });
 
-        function animate() {
-            ctx.fillStyle = 'rgba(0, 0, 0, 0.12)';
+        function renderCanvas() {
+            // Smooth dark trail
+            ctx.fillStyle = 'rgba(5, 2, 12, 0.16)';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-            // Draw Matrix Rain
-            ctx.font = fontSize + "px monospace";
+            // Draw Falling Diwali Diyas & Auspicious Symbols Matrix
+            ctx.font = "16px sans-serif";
             for (let i = 0; i < drops.length; i++) {
-                const text = chars[Math.floor(Math.random() * chars.length)];
-                ctx.fillStyle = (i % 3 === 0) ? '#00ffcc' : '#008844';
-                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+                const item = diwaliSymbols[Math.floor(Math.random() * diwaliSymbols.length)];
+                // Alternate Golden and Cyan glow
+                ctx.fillStyle = (i % 2 === 0) ? '#ffcc00' : '#00ffcc';
+                ctx.fillText(item, i * colWidth, drops[i] * 22);
 
-                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                if (drops[i] * 22 > canvas.height && Math.random() > 0.96) {
                     drops[i] = 0;
                 }
-                drops[i]++;
+                drops[i] += 0.35; // Smooth festive speed
             }
 
-            // Draw Fireworks when unlocked
-            if (fireworksActive) {
-                if (Math.random() < 0.05) {
+            // Draw Fireworks
+            if (celebrationActive) {
+                if (Math.random() < 0.045) {
                     createFirework(
                         Math.random() * canvas.width,
-                        Math.random() * (canvas.height * 0.5) + 50
+                        Math.random() * (canvas.height * 0.45) + 40
                     );
                 }
 
-                for (let i = particles.length - 1; i >= 0; i--) {
-                    let p = particles[i];
-                    p.x += p.vx;
-                    p.y += p.vy;
-                    p.vy += 0.04; // Gravity
-                    p.alpha -= 0.02;
+                for (let i = sparks.length - 1; i >= 0; i--) {
+                    let s = sparks[i];
+                    s.x += s.vx;
+                    s.y += s.vy;
+                    s.vy += 0.04; // Gravity
+                    s.alpha -= 0.02;
 
-                    if (p.alpha <= 0) {
-                        particles.splice(i, 1);
+                    if (s.alpha <= 0) {
+                        sparks.splice(i, 1);
                     } else {
                         ctx.save();
-                        ctx.globalAlpha = p.alpha;
-                        ctx.fillStyle = p.color;
-                        ctx.shadowBlur = 10;
-                        ctx.shadowColor = p.color;
+                        ctx.globalAlpha = s.alpha;
+                        ctx.fillStyle = s.color;
+                        ctx.shadowBlur = 12;
+                        ctx.shadowColor = s.color;
                         ctx.beginPath();
-                        ctx.arc(p.x, p.y, 2.5, 0, Math.PI * 2);
+                        ctx.arc(s.x, s.y, 2.8, 0, Math.PI * 2);
                         ctx.fill();
                         ctx.restore();
                     }
                 }
             }
 
-            requestAnimationFrame(animate);
+            requestAnimationFrame(renderCanvas);
         }
-        animate();
+        renderCanvas();
 
-        // WhatsApp Viral Link Generator
-        function shareOnWhatsApp() {
-            const nameInput = document.getElementById('customName').value.trim();
-            const myName = nameInput ? nameInput : "HACKER JAMAL";
+        // 7. WhatsApp Share Function
+        function shareWish() {
+            const inputVal = document.getElementById('userNameInput').value.trim();
+            const customSender = inputVal ? inputVal : "CYBER WARRIOR JAMAL";
             const baseUrl = window.location.origin + window.location.pathname;
-            const shareUrl = `${baseUrl}?by=${encodeURIComponent(myName)}`;
-            
-            const whatsappMsg = `⚡ *${myName}* ने आपके लिए एक *Secret Cyber Diwali Wish* भेजी है! 🪔💻\n\nनीचे नीले लिंक पर क्लिक करके अपना सिस्टम अनलॉक करें 👇\n${shareUrl}`;
-            window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(whatsappMsg)}`, '_blank');
+            const finalLink = `${baseUrl}?by=${encodeURIComponent(customSender)}`;
+
+            const msg = `🪔✨ *${customSender}* ने आपके और आपके परिवार के लिए एक बहुत ही खास *Royal Cyber Diwali Wish* भेजी है! 🎇🛡️\n\nनीचे नीले लिंक पर क्लिक करके रोशनी का द्वार खोलें 👇\n${finalLink}`;
+            window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(msg)}`, '_blank');
         }
     </script>
 </body>
